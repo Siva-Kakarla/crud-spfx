@@ -3,9 +3,20 @@ import styles from './CrudWp.module.scss';
 import { ICrudWpProps } from './ICrudWpProps';
 import { escape } from '@microsoft/sp-lodash-subset';
 import {ICrudWpState} from './CrudWpState';
+import { ICmp_MainMenuProps } from '../Cmp_MainMenu/ICmp_MainMenu'
+import Cmp_MainMenu from '../Cmp_MainMenu/Cmp_MainMenu';
 
 export default class CrudWp extends React.Component<ICrudWpProps, ICrudWpState>
 {
+
+  constructor(props: ICrudWpProps, state: ICrudWpState) {
+    super(props);
+
+    this.state = {
+      SateName: "My Name Siva"
+    };
+  }
+
   public render(): React.ReactElement<ICrudWpProps>
   {
     return (
@@ -29,6 +40,7 @@ export default class CrudWp extends React.Component<ICrudWpProps, ICrudWpState>
               <p className={ styles.description }>D|Delete</p>
 
               <button className={ styles.button } value='Demo' onClick={this.Button_Click}>Click here for Demo</button>
+              <div>{this.state.SateName}</div>
             </div>
           </div>
         </div>
@@ -40,5 +52,29 @@ export default class CrudWp extends React.Component<ICrudWpProps, ICrudWpState>
   {
     alert('Main Component..')
     //this.setState{}
+
+    this.setState({
+      SateName: "My Self Siva"
+    });
+  }
+
+  public Create_button_Click():void
+  {
+    //ICmp_MainMenuProps
+  }
+
+  public Read_button_Click():void
+  {
+    //ICmp_MainMenuProps
+  }
+
+  public Update_button_Click():void
+  {
+    //ICmp_MainMenuProps
+  }
+
+  public Delete_button_Click():void
+  {
+    //ICmp_MainMenuProps
   }
 }

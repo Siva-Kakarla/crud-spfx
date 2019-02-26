@@ -10,7 +10,6 @@ import {
 import * as strings from 'CrudWpWebPartStrings';
 import CrudWp from './components/CrudWp';
 import { ICrudWpProps } from './components/ICrudWpProps';
-import { ICmp_MainMenuProps } from './Cmp_MainMenu/ICmp_MainMenu'
 import Cmp_MainMenu from './Cmp_MainMenu/Cmp_MainMenu'
 import {ICrudWpState} from './components/CrudWpState';
 
@@ -42,26 +41,6 @@ export default class CrudWpWebPart extends BaseClientSideWebPart<ICrudWpWebPartP
   public MainMenu_Click():void
   {
       
-  }
-
-  public Create_button_Click():void
-  {
-    //ICmp_MainMenuProps
-  }
-
-  public Read_button_Click():void
-  {
-    //ICmp_MainMenuProps
-  }
-
-  public Update_button_Click():void
-  {
-    //ICmp_MainMenuProps
-  }
-
-  public Delete_button_Click():void
-  {
-    //ICmp_MainMenuProps
   }
 
   protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
