@@ -11,28 +11,51 @@ export default class Cmp_MainMenu extends React.Component<ICmp_MainMenuProps, {}
       <div className={ styles.crudWp }>
         <div className={ styles.container }>
 
-        <div className={styles.Cust_Grid} dir="ltr">
+        {/* <div className={styles.Cust_Grid} dir="ltr">
           <div className={styles.Cust_Grid_Row}>
               <div className={styles.Cust_Grid_Col}>A</div>
               <div className={styles.Cust_Grid_Col}>B</div>
               <div className={styles.Cust_Grid_Col}>C</div>
           </div>
-        </div>
-          
-          
-          
-          
-          
-          {/* <div  className={ styles.row }>
-            <div className={ styles.column }>
-              <span className={ styles.title }>Welcome to CRUD Operations</span>
+        </div> */}
 
-              <p className={ styles.subTitle }>Please select below options</p>
-              <button className={ styles.button } value='Demo' onClick={this.props.Create_ClickHandler}>
-                <span className={ styles.label }>Create Item</span>
-              </button>
+        <span className={ styles.title }>Welcome to CRUD Operations</span>
+        <p className={ styles.subTitle }>Please select below options</p>
+          
+        <div className={styles.Cust_Grid} dir="ltr">
+          <div className={styles.Cust_Grid_Row}>
+              <div className={styles.Cust_Grid_Col}>
+                <button className={ styles.button } value='Create Item' onClick={this.props.Create_ClickHandler}>
+                  <span className={ styles.label }>Create Item</span>
+                </button>
+              </div>
+
+              <div className={styles.Cust_Grid_Col_B}>
+                <button className={ styles.button } value='Read Item' onClick={this.props.Read_ClickHandler}>
+                  <span className={ styles.label }>Read Item</span>
+                </button>
+              </div>
             </div>
-          </div> */}
+          </div>
+
+          <br></br>
+
+          <div className={styles.Cust_Grid} dir="ltr">
+          <div className={styles.Cust_Grid_Row}>
+              <div className={styles.Cust_Grid_Col}>
+                <button className={ styles.button } value='Update Item' onClick={this.props.Update_ClickHandler}>
+                  <span className={ styles.label }>Update Item</span>
+                </button>
+              </div>
+
+              <div className={styles.Cust_Grid_Col_B}>
+                <button className={ styles.button } value='Delete Item' onClick={this.props.Delete_ClickHandler}>
+                  <span className={ styles.label }>Delete Item</span>
+                </button>
+              </div>
+
+            </div>
+          </div>
           
           {/* <div className={ styles.row }>
             <div className={ styles.column }>
@@ -44,7 +67,6 @@ export default class Cmp_MainMenu extends React.Component<ICmp_MainMenuProps, {}
               </a>
             </div>
           </div> */}
-
         </div>
       </div>
     );

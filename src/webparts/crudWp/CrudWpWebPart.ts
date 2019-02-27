@@ -23,8 +23,7 @@ export default class CrudWpWebPart extends BaseClientSideWebPart<ICrudWpWebPartP
   {
     const element: React.ReactElement<ICrudWpProps > = React.createElement(CrudWp,
       {
-        description: this.properties.description,
-        ClickHandler: this.MainMenu_Click 
+        description: this.properties.description
       }
     );
     ReactDom.render(element, this.domElement);    
@@ -36,11 +35,6 @@ export default class CrudWpWebPart extends BaseClientSideWebPart<ICrudWpWebPartP
 
   protected get dataVersion(): Version {
     return Version.parse('1.0');
-  }
-
-  public MainMenu_Click():void
-  {
-      
   }
 
   protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {

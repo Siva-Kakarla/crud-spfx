@@ -1,3 +1,3 @@
 export interface ICrudWpState {
-    SateName: string;
+    State_Name: string;
 }
