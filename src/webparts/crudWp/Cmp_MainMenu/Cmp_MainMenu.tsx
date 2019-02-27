@@ -32,7 +32,7 @@ export default class Cmp_MainMenu extends React.Component<ICmp_MainMenuProps, {}
 
               <div className={styles.Cust_Grid_Col_B}>
                 <button className={ styles.button } value='Read Item' onClick={this.props.Read_ClickHandler}>
-                  <span className={ styles.label }>Read Item</span>
+                  <span className={ styles.label }>Read  Item</span>
                 </button>
               </div>
             </div>
