@@ -3,8 +3,37 @@
 .crudWp {
   .container {
     max-width: 700px;
+    min-width: 200px;
+    max-height: 700px;
+    min-height: 700px;
     margin: 0px auto;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
+    //box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
+  }
+  .row {
+    @include ms-Grid-row;
+    @include ms-fontColor-white;
+    background-color: $ms-color-themeDark;
+    padding: 20px;
+  }
+  .column {
+    @include ms-Grid-col;
+    @include ms-lg12;
+    @include ms-xl8;
+    @include ms-xlPush2;
+    @include ms-lgPush1;
+  }
+  .title {
+    @include ms-font-xl;
+    @include ms-fontColor-white;
+  }
+  .subTitle {
+    @include ms-font-l;
+    @include ms-fontColor-white;
+  }
+
+  .description {
+    @include ms-font-l;
+    @include ms-fontColor-white;
   }
 
   .Cust_Grid
@@ -22,8 +51,8 @@
     @include ms-Grid-col;
     @include ms-sm6;
     @include ms-md4;
-    @include ms-lg2;
-    background-color: red;
+    @include ms-lg4;
+    color: red;
   }
 
 .Cust_Grid_Col_B
@@ -31,41 +60,11 @@
     @include ms-Grid-col;
     @include ms-sm6;
     @include ms-md8;
-    @include ms-lg10;
-    background-color: green;
+    @include ms-lg4;
+    color: green;
   }
 
-  .row {
-    @include ms-Grid-row;
-    @include ms-fontColor-white;
-    background-color: $ms-color-themeDark;
-    padding: 20px;
-  }
-
-  .column {
-    @include ms-Grid-col;
-    @include ms-lg10;
-    @include ms-xl8;
-    @include ms-xlPush2;
-    @include ms-lgPush1;
-  }
-
-  .title {
-    @include ms-font-xl;
-    @include ms-fontColor-white;
-  }
-
-  .subTitle {
-    @include ms-font-l;
-    @include ms-fontColor-white;
-  }
-
-  .description {
-    @include ms-font-l;
-    @include ms-fontColor-white;
-  }
-
-  .button {
+  .buttons {
     // Our button
     text-decoration: none;
     height: 32px;
@@ -98,5 +97,38 @@
       vertical-align: top;
       display: inline-block;
     }
+  }
+
+  .button {
+    display: inline-block;
+    border: none;
+    padding: 1rem 2rem;
+    margin: 0;
+    text-decoration: none;
+    background: #0069ed;
+    color: #ffffff;
+    font-weight: $ms-font-weight-semibold;
+    font-size: $ms-font-size-m;
+    cursor: pointer;
+    text-align: center;
+    transition: background 250ms ease-in-out, 
+                transform 150ms ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border-radius: 8px;
+  }
+
+  button:hover,
+  button:focus {
+      background: #0053ba;
+  }
+
+  // button:focus {
+  //     outline: 1px solid #fff;
+  //     outline-offset: -4px;
+  // }
+
+  button:active {
+      transform: scale(0.99);
   }
 }

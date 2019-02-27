@@ -1,0 +1,100 @@
+@import '~@microsoft/sp-office-ui-fabric-core/dist/sass/SPFabricCore.scss';
+
+
+.cmpCreate {
+
+    .label {
+        font-weight: $ms-font-weight-semibold;
+        font-size: $ms-font-size-m;
+        height: 32px;
+        line-height: 32px;
+        margin: 0 4px;
+        vertical-align: top;
+        display: inline-block;
+      }
+
+    .Cust_Grid
+  {
+    @include  ms-Grid;
+  }
+
+  .Cust_Grid_Row
+  {
+    @include ms-Grid-row;
+  }
+
+  .Cust_Grid_Col
+  {
+    @include ms-Grid-col;
+    @include ms-sm6;
+    @include ms-md4;
+    @include ms-lg4;
+    color: red;
+  }
+
+.Cust_Grid_Col_B
+  {
+    @include ms-Grid-col;
+    @include ms-sm6;
+    @include ms-md8;
+    @include ms-lg4;
+    color: green;
+  }
+    .row {
+        @include ms-Grid-row;
+        @include ms-fontColor-white;
+        background-color: $ms-color-themeDark;
+        padding: 20px;
+    }
+
+    .column {
+    @include ms-Grid-col;
+    @include ms-lg10;
+    @include ms-xl8;
+    @include ms-xlPush2;
+    @include ms-lgPush1;
+    }
+
+    .title {
+    @include ms-font-xl;
+    @include ms-fontColor-white;
+    }
+
+    .subTitle {
+    @include ms-font-l;
+    @include ms-fontColor-white;
+    }
+
+    .description {
+    @include ms-font-l;
+    @include ms-fontColor-white;
+    }
+
+    .button {
+        display: inline-block;
+        border: none;
+        padding: 1rem 2rem;
+        margin: 0;
+        text-decoration: none;
+        background: #0069ed;
+        color: #ffffff;
+        font-weight: $ms-font-weight-semibold;
+        font-size: $ms-font-size-m;
+        cursor: pointer;
+        text-align: center;
+        transition: background 250ms ease-in-out, 
+                    transform 150ms ease;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        border-radius: 8px;
+      }
+    
+      button:hover,
+      button:focus {
+          background: #0053ba;
+      }
+    
+      button:active {
+          transform: scale(0.99);
+      }
+}

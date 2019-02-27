@@ -8,16 +8,7 @@ export default class Cmp_MainMenu extends React.Component<ICmp_MainMenuProps, {}
   public render(): React.ReactElement<ICmp_MainMenuProps>
   {
     return (
-      <div className={ styles.crudWp }>
-        <div className={ styles.container }>
-
-        {/* <div className={styles.Cust_Grid} dir="ltr">
-          <div className={styles.Cust_Grid_Row}>
-              <div className={styles.Cust_Grid_Col}>A</div>
-              <div className={styles.Cust_Grid_Col}>B</div>
-              <div className={styles.Cust_Grid_Col}>C</div>
-          </div>
-        </div> */}
+      <div className={styles.cmp_Menu}>
 
         <span className={ styles.title }>Welcome to CRUD Operations</span>
         <p className={ styles.subTitle }>Please select below options</p>
@@ -68,7 +59,6 @@ export default class Cmp_MainMenu extends React.Component<ICmp_MainMenuProps, {}
             </div>
           </div> */}
         </div>
-      </div>
     );
 
 
