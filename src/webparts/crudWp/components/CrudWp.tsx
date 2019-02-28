@@ -6,7 +6,9 @@ import {ICrudWpState} from './CrudWpState';
 import { LetterSpacingProperty } from 'csstype';
 
 import Cmp_MainMenu from '../Cmp_MainMenu/Cmp_MainMenu';
-import {Cmp_Create} from '../Cmp_Create/Cmp_Create'
+import Cmp_Create from '../Cmp_Create/Cmp_Create'
+import {PanelScrollExample} from '../Cmp_Create/Create_Panel/Create_Panel'
+import {IPanelScrollExampleState} from '../Cmp_Create/Create_Panel/Create_Panel'
 
 
 export default class CrudWp extends React.Component<ICrudWpProps, ICrudWpState>
@@ -83,19 +85,15 @@ export default class CrudWp extends React.Component<ICrudWpProps, ICrudWpState>
         );
       break;
 
-      case "Create":
+      case "Creat":
         Final_Html = (
           <div className={ styles.crudWp }>
             <div className={ styles.container }>
-              <div  className={ styles.row }>
-                <div className={ styles.column }>
-                  {/* <cmp_Create
+              <Cmp_Create
                     description={""}
-                    Create_ClickHandler= {this.Create_button_Click.bind(this)}
-                    Cancel_ClickHandler={this.Delete_button_Click.bind(this)}
-                  /> */}
-                </div>
-              </div>
+                    Create_ClickHandler= {this.Create_Click_Event.bind(this)}
+                    Cancel_ClickHandler={this.Cancel_Click_Event.bind(this)}
+              />
             </div>
 
             <div>Test {this.state.State_Name}</div>
@@ -103,6 +101,23 @@ export default class CrudWp extends React.Component<ICrudWpProps, ICrudWpState>
         );
       break;
 
+      case "CreatPanel":
+        Final_Html = (
+          <div className={ styles.crudWp }>
+            <div className={ styles.container }>
+              <Cmp_Create
+                    description={""}
+                    Create_ClickHandler= {this.Create_Click_Event.bind(this)}
+                    Cancel_ClickHandler={this.Cancel_Click_Event.bind(this)}
+              />
+            </div>
+
+            <PanelScrollExample iSshowPanel={true}></PanelScrollExample>
+
+            <div>Test {this.state.State_Name}</div>
+          </div>
+        );
+      break;
       default:
        Final_Html = (<div>
           Something went wrong please contact admin.
@@ -125,6 +140,18 @@ export default class CrudWp extends React.Component<ICrudWpProps, ICrudWpState>
     this.setState({
       State_Name: "Creat"
     });
+  }
+
+  public Create_Click_Event():void
+  {
+    this.setState({
+      State_Name: "CreatPanel"
+    });
+  }
+
+  public Cancel_Click_Event():void
+  {
+    
   }
 
   public Read_button_Click():void

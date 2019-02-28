@@ -3,43 +3,42 @@
 
 .cmpCreate {
 
-    .label {
-        font-weight: $ms-font-weight-semibold;
-        font-size: $ms-font-size-m;
-        height: 32px;
-        line-height: 32px;
-        margin: 0 4px;
-        vertical-align: top;
-        display: inline-block;
-      }
+    .container {
+      max-width: 700px;
+      min-width: 200px;
+      max-height: 700px;
+      min-height: 700px;
+      margin: 0px auto;
+      //box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
+    }
 
     .Cust_Grid
-  {
-    @include  ms-Grid;
-  }
+    {
+      @include  ms-Grid;
+    }
 
-  .Cust_Grid_Row
-  {
-    @include ms-Grid-row;
-  }
+    .Cust_Grid_Row
+    {
+      @include ms-Grid-row;
+    }
 
-  .Cust_Grid_Col
-  {
-    @include ms-Grid-col;
-    @include ms-sm6;
-    @include ms-md4;
-    @include ms-lg4;
-    color: red;
-  }
+    .Cust_Grid_Col
+    {
+      @include ms-Grid-col;
+      @include ms-sm6;
+      @include ms-md4;
+      @include ms-lg4;
+      color: red;
+    }
 
-.Cust_Grid_Col_B
-  {
-    @include ms-Grid-col;
-    @include ms-sm6;
-    @include ms-md8;
-    @include ms-lg4;
-    color: green;
-  }
+    .Cust_Grid_Col_B
+    {
+      @include ms-Grid-col;
+      @include ms-sm6;
+      @include ms-md8;
+      @include ms-lg4;
+      color: green;
+    }
     .row {
         @include ms-Grid-row;
         @include ms-fontColor-white;
@@ -68,6 +67,15 @@
     .description {
     @include ms-font-l;
     @include ms-fontColor-white;
+    }
+    .label {
+      font-weight: $ms-font-weight-semibold;
+      font-size: $ms-font-size-m;
+      height: 32px;
+      line-height: 32px;
+      margin: 0 4px;
+      vertical-align: top;
+      display: inline-block;
     }
 
     .button {
