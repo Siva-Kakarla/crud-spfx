@@ -13,10 +13,11 @@ import {IPanelScrollExampleState} from '../Cmp_Create/Create_Panel/Create_Panel'
 
 export default class CrudWp extends React.Component<ICrudWpProps, ICrudWpState>
 {
+  superheroElement : any;
 
   constructor(props: ICrudWpProps, state: ICrudWpState) {
     super(props);
-
+    this.superheroElement = React.createRef();
     this.state = {
       State_Name: "Init"
     };
@@ -36,6 +37,7 @@ export default class CrudWp extends React.Component<ICrudWpProps, ICrudWpState>
     {
       case "Init":
         Final_Html = (<div className={ styles.crudWp }>
+            <div>Test {this.state.State_Name}</div>
             <div className={ styles.container }>
               <div  className={ styles.row }>
                 <div className={ styles.column }>
@@ -55,7 +57,7 @@ export default class CrudWp extends React.Component<ICrudWpProps, ICrudWpState>
                     <p className={ styles.description }>D|Delete</p>
 
                     <button className={ styles.button } value='Demo' onClick={this.Button_Click.bind(this)}>Click here for Demo</button>
-                    <div>Test {this.state.State_Name}</div>
+                    
                   </div>
                 </div>
               </div>
@@ -66,6 +68,7 @@ export default class CrudWp extends React.Component<ICrudWpProps, ICrudWpState>
       case "MainMenu":
         Final_Html = (
           <div className={ styles.crudWp }>
+            <div>Test {this.state.State_Name}</div>
             <div className={ styles.container }>
               <div  className={ styles.row }>
                 <div className={ styles.column }>
@@ -88,6 +91,7 @@ export default class CrudWp extends React.Component<ICrudWpProps, ICrudWpState>
       case "Creat":
         Final_Html = (
           <div className={ styles.crudWp }>
+            <div>Test {this.state.State_Name}</div>
             <div className={ styles.container }>
               <Cmp_Create
                     description={""}
@@ -95,8 +99,6 @@ export default class CrudWp extends React.Component<ICrudWpProps, ICrudWpState>
                     Cancel_ClickHandler={this.Cancel_Click_Event.bind(this)}
               />
             </div>
-
-            <div>Test {this.state.State_Name}</div>
           </div>
         );
       break;
@@ -104,6 +106,7 @@ export default class CrudWp extends React.Component<ICrudWpProps, ICrudWpState>
       case "CreatPanel":
         Final_Html = (
           <div className={ styles.crudWp }>
+            <div>Test {this.state.State_Name}</div>
             <div className={ styles.container }>
               <Cmp_Create
                     description={""}
@@ -112,9 +115,10 @@ export default class CrudWp extends React.Component<ICrudWpProps, ICrudWpState>
               />
             </div>
 
-            <PanelScrollExample iSshowPanel={true}></PanelScrollExample>
-
-            <div>Test {this.state.State_Name}</div>
+            <PanelScrollExample 
+              ref={this.superheroElement}
+              Save_Panel_Data={this.CreatePanel_Save_Click_Event.bind(this)}
+            />
           </div>
         );
       break;
@@ -144,14 +148,29 @@ export default class CrudWp extends React.Component<ICrudWpProps, ICrudWpState>
 
   public Create_Click_Event():void
   {
-    this.setState({
-      State_Name: "CreatPanel"
-    });
+    if(this.state.State_Name == "CreatPanel")
+    {
+      this.superheroElement.current.ChangeState_OfPanel();
+    }
+    else
+    {
+      this.setState({
+        State_Name: "CreatPanel"
+      });
+    }
   }
 
   public Cancel_Click_Event():void
   {
-    
+    this.setState({
+      State_Name: "MainMenu"
+    });
+  }
+
+
+  public CreatePanel_Save_Click_Event():void
+  {
+    this.superheroElement.current.ChangeState_OfPanel();
   }
 
   public Read_button_Click():void
